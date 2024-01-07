@@ -5,10 +5,10 @@ import Logo from "./shared/Logo";
 
 export const Header = () => {
   return (
-    <AppBar
-      sx={{ bgcolor: "transparent", position: "static", boxShadow: "none" }}
-    >
-      <Toolbar sx={{ display: "flex" }}> </Toolbar>
+    <AppBar sx={{ bgcolor: "black", position: "static", boxShadow: "none" }}>
+      <Toolbar sx={{ display: "flex" }}>
+        <Logo />
+      </Toolbar>
     </AppBar>
   );
 };

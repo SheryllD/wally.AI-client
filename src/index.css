@@ -3,7 +3,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #102030;
+  background: #070e11;
   color: white;
   font-family: "Roboto Slab", serif;
 }
+/*.image-inverted {
+  filter: brightness();
+} */
