@@ -1,4 +1,10 @@
-import { createContext } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type User = {
   name: string;
@@ -12,9 +18,9 @@ type UserAuth = {
   signup: (name: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
 };
-
 const AuthContext = createContext<UserAuth | null>(null);
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -34,3 +40,5 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
+
+export const UseAuth = () => useContext(AuthContext);
